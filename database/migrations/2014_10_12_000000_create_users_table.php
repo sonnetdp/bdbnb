@@ -19,6 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('designation',191)->default('CEO');
             $table->string('email',191)->unique();
             $table->string('password',191);
+            $table->integer('role')->default(0)->comment('0-user, 1-admin, 2-manager');
             $table->rememberToken();
             $table->timestamps();
         });
