@@ -52,6 +52,7 @@
                                 </a>
 
                                 <ul class="dropdown-menu">
+                                    <li><a href="{{url('/manager/create/user')}}">Crete User</a></li>
                                     <li>
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
