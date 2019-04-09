@@ -12,8 +12,8 @@ class AmenitiesSeeder extends Seeder
      */
     public function run()
     {
-      $amenities = new Amenities;
-      $amenities->amenity_name = 'shower';
-      $amenities->save();
+        $amenities = new Amenities;
+        $amenities->amenity_name = 'shower';
+        $amenities->save();
     }
 }

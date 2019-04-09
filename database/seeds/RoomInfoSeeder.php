@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use app/RoomInfo;
+use App\RoomInfo;
 class RoomInfoSeeder extends Seeder
 {
     /**

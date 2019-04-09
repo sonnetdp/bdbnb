@@ -20,7 +20,7 @@ class CreateRoomInfosTable extends Migration
             $table->integer('bed_no');
             $table->integer('bed_rooms');
             $table->integer('bath');
-            $table->float('price_per_day',5,2);
+            $table->float('price_per_day',10,2);
             $table->string('room_details',191);
             $table->string('more_info',191);
             $table->string('accommodation_type',191);
