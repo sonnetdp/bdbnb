@@ -30,6 +30,8 @@ Route::group(['prefix'=>'manager','middleware'=>['auth','auth.manager']],functio
     Route::get('link3','ContactController@querySave');
     Route::get('create/user','UserController@showForm');
     Route::post('create/user','UserController@userInsert');
+    Route::get('update/user/{user_id}','UserController@updateUser');
+    Route::post('update/user/{user_id}','UserController@updateSaveUser');
 
 });
 

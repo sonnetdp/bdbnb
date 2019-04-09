@@ -9,12 +9,14 @@ use Session;
 class UserController extends Controller
 {
     public function showForm(){
-
-        return view('user.registration');
+        $users = User::all();
+        return view('user.registration')
+            ->with('u',$users);
     }
 
     public function userInsert(Request $request){
         $request->validate([
+                'name' => 'required|max:50',
                 'email' => 'required|unique:users|max:191',
                 'password' => 'required|min:6|max:10'
             ]);
@@ -24,6 +26,29 @@ class UserController extends Controller
         $user->password = bcrypt($request['password']);
         $user->save();
         Session::flash('success','Successfully created');
+        return redirect()->back();
+    }
+
+    public function updateUser($user_id){
+        $user = User::find($user_id);
+        $users = User::all();
+        return view('user.registration')
+            ->with('user',$user)
+            ->with('u',$users);
+    }
+
+    public function updateSaveUser(Request $request){
+        $request->validate([
+                'name' => 'required|max:50'
+            ]);
+        $user = User::find($request['id']);
+        $user->name = $request['name'];
+        //$user->email = $request['email'];
+        if($request['password'] != ''){
+            $user->password = bcrypt($request['password']);
+        }
+        $user->save();
+        Session::flash('success','Successfully updated');
         return redirect()->back();
     }
 }

@@ -13,12 +13,14 @@
                 <div class="panel-body">
                     <form class="form-horizontal" method="POST" action="">
                         {{ csrf_field() }}
-
+                        @if(isset($user))
+                            <input type="hidden" name="id" value="{{$user->id}}">
+                        @endif
                         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
                             <label for="name" class="col-md-4 control-label">Name</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}"  autofocus>
+                                <input id="name" type="text" class="form-control" name="name" value="@if(isset($user)){{$user->name}}@else{{ old('name') }}@endif"  autofocus>
 
                                 @if ($errors->has('name'))
                                     <span class="help-block">
@@ -32,7 +34,7 @@
                             <label for="email" class="col-md-4 control-label">E-Mail Address</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" >
+                                <input id="email" type="email" class="form-control" name="email" value="@if(isset($user)){{$user->email}}@else{{ old('email') }}@endif" >
 
                                 @if ($errors->has('email'))
                                     <span class="help-block">
@@ -76,5 +78,30 @@
             </div>
         </div>
     </div>
+    <h2>Users</h2>
+      <p>All users in database</p>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Designation</th>
+            <th>Email</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+            @foreach($u AS $sUser)
+          <tr>
+            <td>{{$sUser->name}}</td>
+            <td>{{$sUser->designation}}</td>
+            <td>{{$sUser->email}}</td>
+            <td><a href="{{url('/manager/update/user',$sUser->id)}}" class="btn btn-warning btn-sm">Edit</a></td>
+          </tr>
+          @endforeach
+        </tbody>
+      </table>
+  <br>
+  <br>
+  <br>
 </div>
 @endsection
