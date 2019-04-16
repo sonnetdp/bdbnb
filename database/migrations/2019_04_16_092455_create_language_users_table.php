@@ -15,6 +15,8 @@ class CreateLanguageUsersTable extends Migration
     {
         Schema::create('language_users', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('user_id');
+            $table->integer('language_id');
             $table->timestamps();
         });
     }

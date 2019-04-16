@@ -15,6 +15,10 @@ class CreateRatingCategoriesTable extends Migration
     {
         Schema::create('rating_categories', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('accuracy');
+            $table->integer('communication');
+            $table->integer('cleanliness');
+            $table->integer('value');
             $table->timestamps();
         });
     }
