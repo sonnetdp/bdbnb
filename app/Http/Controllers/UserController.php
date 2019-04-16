@@ -51,4 +51,9 @@ class UserController extends Controller
         Session::flash('success','Successfully updated');
         return redirect()->back();
     }
+
+    public function showUserByRole($role){
+        $user = new User;
+        return view('user.registration')->with('u',$user->searchUserByRole($role));
+    }
 }
