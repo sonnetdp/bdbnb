@@ -1,0 +1,153 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:300,400,700);
+
+body{
+  font-family: 'Lato', sans-serif;
+  font-weight:300;
+  background-color:#FFFFFF;
+  overflow-x: hidden;
+}
+
+.dropdown-large {
+  position: static !important;
+}
+.dropdown-menu-large {
+  margin-left: 16px;
+  margin-right: 16px;
+  padding: 20px 0px;
+}
+.dropdown-menu-large > li > ul {
+  padding: 0;
+  margin: 0;
+}
+.dropdown-menu-large > li > ul > li {
+  list-style: none;
+}
+.dropdown-menu-large > li > ul > li > a {
+  display: block;
+  padding: 3px 20px;
+  clear: both;
+  font-weight:300;
+  line-height: 1.428571429;
+  color: #333333;
+  white-space: normal;
+}
+.dropdown-menu-large > li ul > li > a:hover,
+.dropdown-menu-large > li ul > li > a:focus {
+  text-decoration: none;
+  color: #262626;
+  background-color: #f5f5f5;
+}
+.dropdown-menu-large .disabled > a,
+.dropdown-menu-large .disabled > a:hover,
+.dropdown-menu-large .disabled > a:focus {
+  color: #999999;
+}
+.dropdown-menu-large .disabled > a:hover,
+.dropdown-menu-large .disabled > a:focus {
+  text-decoration: none;
+  background-color: transparent;
+  background-image: none;
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+  cursor: not-allowed;
+}
+.dropdown-menu-large .dropdown-header {
+  color: #428bca;
+  font-size: 18px;
+}
+@media (max-width: 768px) {
+  .dropdown-menu-large {
+    margin-left: 0 ;
+    margin-right: 0 ;
+  }
+  .dropdown-menu-large > li {
+    margin-bottom: 30px;
+  }
+  .dropdown-menu-large > li:last-child {
+    margin-bottom: 0;
+  }
+  .dropdown-menu-large .dropdown-header {
+    padding: 3px 15px !important;
+  }
+}
+
+.bookunik
+{
+  width: 200px; height: 200px;
+      background-color: #CD0707;
+      color: black;
+      font-size: 35px;
+      text-align: center;
+      line-height: 200px;
+      margin: 0 auto;
+      box-shadow: 10px 10px 10px #000;
+      border-radius: 10,00px;
+}
+
+.login_icone
+{
+  color:#FFFFFF;
+  font-size: 20px;
+}
+.marque
+{
+  
+  font-size: 18px;
+  color:#0FF777;
+}
+/*we offer*/
+.heading
+{
+  text-align: center;
+  padding-top: 5px;
+  font-size: 25px;
+  font-weight: 800;
+  border-width: 3px;
+  border-bottom-style: ridge;
+  border-color: red;
+}
+/*container*/
+.well img
+{
+  width: 100%; height: 300px;
+}
+
+.text-justify
+{
+  font-size: 17px;
+}
+
+/*footer*/
+  
+ul.footer_box{
+  list-style:none;
+  padding:0;
+} 
+ul.footer_box h4{
+  color:#fff;
+  font-size:1.1em;
+  text-transform:uppercase;
+  font-weight:700;
+  margin-bottom: 8%;
+}
+ul.footer_box li a{
+  color: #B8B6B6;
+  font-size: 1em;
+  text-decoration:none;
+  line-height: 2em;
+}
+.module{
+  position:relative;
+  top:10%;    
+  height:65%;
+  width:450px;
+  margin-left:auto;
+  margin-right:auto;
+}
+.footer
+{
+  min-height: 80px;
+  width: 100%;
+  background-color: #0F0101;
+}
+
+/*registration*/
