@@ -29,7 +29,7 @@ class User extends Authenticatable
     ];
 
     public function searchUserByRole($role=0){
-        $query = DB::table('users1 as u');
+        $query = DB::table('users as u');
         if($role != 0){
             $query->where('role',$role);
         }

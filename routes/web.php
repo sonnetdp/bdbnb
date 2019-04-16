@@ -21,7 +21,9 @@ Route::prefix('admin')->middleware(['auth','auth.admin'])->group(function () {
     Route::get('link1',function(){
         echo 'link 1 test route';
     });
-    Route::get('/','ContactController@querySave');
+    Route::get('/', function () {
+        return view('admin_dashboard');
+    });
     Route::get('link3','ContactController@querySave');
 
 });
