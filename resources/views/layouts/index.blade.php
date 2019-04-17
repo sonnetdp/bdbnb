@@ -19,11 +19,6 @@
 
 	<nav class="navbar navbar-inverse navbar-static" style="border:none;">
 
-
-
-
-
-
 		<div class="col-md-1">
 			<div class="logo">
 				<a href=""><img src="{{url('images/402955_thumb.png')}}" alt="" class="img-responsive" width="100"></a>

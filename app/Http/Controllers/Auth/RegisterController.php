@@ -74,6 +74,7 @@ class RegisterController extends Controller
             'contact' => $data['contact'],
             'national_id' => $data['national_id'],
             'passport_id' => $data['passport_id'],
+            'role' => 0,
             'status' => 0,
         ]);
     }

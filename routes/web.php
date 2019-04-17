@@ -25,6 +25,8 @@ Route::prefix('admin')->middleware(['auth','auth.admin'])->group(function () {
         return view('admin_dashboard');
     });
     Route::get('link3','ContactController@querySave');
+    Route::get('/addFlat','RoomInfoController@queryAdd');
+    Route::post('/addFlat','RoomInfoController@queryInsert');
 
 });
 

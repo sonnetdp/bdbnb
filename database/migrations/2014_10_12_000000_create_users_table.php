@@ -22,6 +22,7 @@ class CreateUsersTable extends Migration
             $table->string('contact',191);
             $table->string('national_id',191);
             $table->string('passport_id',191);
+            $table->integer('role')->default(0)->comment('0->user, 1->admin, 2->manage');
             $table->integer('status')->default(0)->comment('0->pending, 1->active, 2->banned');
             $table->rememberToken();
             $table->timestamps();
