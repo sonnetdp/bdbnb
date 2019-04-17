@@ -61,6 +61,63 @@
                             </div>
                         </div>
 
+
+                        <div class="form-group{{ $errors->has('address') ? ' has-error' : '' }}">
+                            <label for="address" class="col-md-4 control-label">Address</label>
+
+                            <div class="col-md-6">
+                                <input id="address" type="text" class="form-control" name="address" required>
+
+                                @if ($errors->has('address'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('address') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group{{ $errors->has('contact') ? ' has-error' : '' }}">
+                            <label for="contact" class="col-md-4 control-label">Contact</label>
+
+                            <div class="col-md-6">
+                                <input id="contact" type="text" class="form-control" name="contact" required>
+
+                                @if ($errors->has('contact'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('contact') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group{{ $errors->has('national_id') ? ' has-error' : '' }}">
+                            <label for="nid" class="col-md-4 control-label">National ID</label>
+
+                            <div class="col-md-6">
+                                <input id="nid" type="text" class="form-control" name="national_id" required>
+
+                                @if ($errors->has('national_id'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('national_id') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group{{ $errors->has('passport_id') ? ' has-error' : '' }}">
+                            <label for="passid" class="col-md-4 control-label">Passport ID</label>
+
+                            <div class="col-md-6">
+                                <input id="passid" type="text" class="form-control" name="passport_id" required>
+
+                                @if ($errors->has('passport_id'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('passport_id') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">

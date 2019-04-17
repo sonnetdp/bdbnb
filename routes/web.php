@@ -39,11 +39,11 @@ Route::group(['prefix'=>'manager','middleware'=>['auth','auth.manager']],functio
 });
 
 Route::get('/', function () {
-    return view('welcome');
-});
-
-
-Route::get('/test', function () {
     return view('layouts.index');
 });
+
+
+//Route::get('/test', function () {
+    //return view('layouts.index');
+//});
 Route::get('/home', 'HomeController@index')->name('home');
