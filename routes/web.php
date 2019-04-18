@@ -17,6 +17,13 @@ Route::get('contact','ContactController@index');
 Route::get('query','ContactController@queryForm');
 Route::post('query','ContactController@querySave');
 
+//Route group for registered user
+Route::prefix('user')->middleware(['auth'])->group(function () {
+    Route::get('/addFlat','RoomInfoController@showAddFlatForm');
+    Route::post('/addFlat','RoomInfoController@queryInsert');
+});
+
+//Route group for admin
 Route::prefix('admin')->middleware(['auth','auth.admin'])->group(function () {
     Route::get('link1',function(){
         echo 'link 1 test route';
@@ -25,11 +32,11 @@ Route::prefix('admin')->middleware(['auth','auth.admin'])->group(function () {
         return view('admin_dashboard');
     });
     Route::get('link3','ContactController@querySave');
-    Route::get('/addFlat','RoomInfoController@queryAdd');
-    Route::post('/addFlat','RoomInfoController@queryInsert');
+
 
 });
 
+//Route group for manager
 Route::group(['prefix'=>'manager','middleware'=>['auth','auth.manager']],function(){
     Route::get('link3','ContactController@querySave');
     Route::get('create/user','UserController@showForm');

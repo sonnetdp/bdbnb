@@ -53,7 +53,7 @@
 
                                 <ul class="dropdown-menu">
                                     <li><a href="{{url('/manager/create/user')}}">Create User</a></li>
-                                    <li><a href="{{url('/admin/addFlat')}}">Add Flat</a></li>
+                                    <li><a href="{{url('/user/addFlat')}}">Add Flat</a></li>
                                     <li><a href="{{url('/manager/list/user/2')}}">Manager</a></li>
                                     <li><a href="{{url('/manager/list/user/0')}}">G User</a></li>
                                     <li>

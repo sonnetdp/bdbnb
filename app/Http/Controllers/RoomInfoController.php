@@ -5,27 +5,27 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\RoomInfo;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Validator;
 
 class RoomInfoController extends Controller
 {
-    public function queryAdd(){
+    public function showAddFlatForm(){
         return view('layouts.addFlat');
     }
 
 
+
     /**
-     * Get a validator for an incoming registration request.
+     * Create a new user instance after a valid registration.
      *
-     * @param  array  $data
-     * @return \Illuminate\Contracts\Validation\Validator
+     * @param  Illuminate\Http\Request  $request
+     * @return \App\RoomInfo
      */
-    protected function validator(array $data)
+    protected function queryInsert(Request $request)
     {
-        return Validator::make($data, [
+        $request->validate([
             'room_name'             => 'required|string|max:255',
             'guest_no'              => 'required|string|max:255',
-            'bed_no'                => 'required|string|min:6|confirmed',
+            'bed_no'                => 'required|string|max:2',
             'bed_rooms'             => 'required|string|max:191',
             'bath'                  => 'required|string|max:191',
             'price_per_day'         => 'required|string|max:191',
@@ -39,33 +39,26 @@ class RoomInfoController extends Controller
             'latitude'              => 'required|string|max:191',
             'longitude'             => 'required|string|max:191',
         ]);
-    }
 
-    /**
-     * Create a new user instance after a valid registration.
-     *
-     * @param  array  $data
-     * @return \App\RoomInfo
-     */
-    protected function queryInsert(array $data)
-    {
-        return RoomInfo::create([
-            'room_name'             => $data['room_name'],
-            'guest_no'              => $data['guest_no'],
-            'bed_no'                => $data['bed_no'],
-            'bed_rooms'             => $data['bed_rooms'],
-            'bath'                  => $data['bath'],
-            'price_per_day'         => $data['price_per_day'],
-            'room_details'          => $data['room_details'],
-            'more_info'             => $data['more_info'],
-            'accommodation_type'    => $data['accommodation_type'],
-            'zone'                  => $data['zone'],
-            'address'               => $data['address'],
-            'house_rules'           => $data['house_rules'],
-            'neighborhood'          => $data['neighborhood'],
-            'latitude'              => $data['latitude'],
-            'longitude'             => $data['longitude'],
-        ]);
+        $roomInfo = new RoomInfo();
+        $roomInfo->room_name        = $request['room_name'];
+        $roomInfo->guest_no         = $request['guest_no'];
+        $roomInfo->bed_no           = $request['bed_no'];
+        $roomInfo->bed_rooms        = $request['bed_rooms'];
+        $roomInfo->bath             = $request['bath'];
+        $roomInfo->price_per_day    = $request['price_per_day'];
+        $roomInfo->room_details     = $request['room_details'];
+        $roomInfo->more_info        = $request['more_info'];
+        $roomInfo->accommodation_type    = $request['accommodation_type'];
+        $roomInfo->zone             = $request['zone'];
+        $roomInfo->address          = $request['address'];
+        $roomInfo->house_rules      = $request['house_rules'];
+        $roomInfo->neighborhood     = $request['neighborhood'];
+        $roomInfo->latitude         = $request['latitude'];
+        $roomInfo->longitude        = $request['longitude'];
+
+        $roomInfo->save();
+        return redirect()->back();
     }
 
 

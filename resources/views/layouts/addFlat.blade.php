@@ -2,7 +2,7 @@
 @section('index_body')
 <div class="container">
     <div class="row col-md-8">
-        <form class="form-horizontal" method="POST" action="{{url('/admin/addFlat')}}">
+        <form class="form-horizontal" method="POST" action="{{url('/user/addFlat')}}">
             {{ csrf_field() }}
 
             <div class="form-group{{ $errors->has('rname') ? ' has-error' : '' }}">
