@@ -2,7 +2,7 @@
 @section('index_body')
 <div class="container">
     <div class="row col-md-8">
-        <form class="form-horizontal" method="POST" action="{{url('/user/addFlat')}}">
+        <form class="form-horizontal" method="POST" action="{{url('/user/addFlat')}}" enctype="multipart/form-data">
             {{ csrf_field() }}
 
             <div class="form-group{{ $errors->has('rname') ? ' has-error' : '' }}">
@@ -213,6 +213,15 @@
                         </span>
                     @endif
                 </div>
+            </div>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+              </div>
+              <div class="custom-file">
+                <input type="file" class="custom-file-input" name="photo" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+                <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+              </div>
             </div>
 
 

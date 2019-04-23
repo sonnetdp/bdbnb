@@ -35,10 +35,10 @@
 		<div class="collapse navbar-collapse js-navbar-collapse">
 			<ul class="nav navbar-nav">
 				<li class="dropdown dropdown-large">
-					<a href="index.html" style="color:#FFFFFF;">Home</a>
+					<a href="{{url('/')}}" style="color:#FFFFFF;">Home</a>
 				</li>
 				<li class="dropdown dropdown-large">
-					<a href="homes.html" style="color:#FFFFFF;">Host a Home</a>
+					<a href="{{url('/user/addFlat')}}" style="color:#FFFFFF;">Add Flat</a>
 				</li>
 				<li class="dropdown dropdown-large">
 					<a href="expriences.html" style="color: #FFFFFF;">Host and Exprience</a>

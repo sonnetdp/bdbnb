@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\RoomInfo;
+use App\room_image;
 use App\Http\Controllers\Controller;
 
 class RoomInfoController extends Controller
@@ -40,6 +41,17 @@ class RoomInfoController extends Controller
             'longitude'             => 'required|string|max:191',
         ]);
 
+        $validationRules = [
+            'photo' => 'required',
+            'photo' => 'image|mimes:jpeg,png,jpg|max:2050',
+        ];
+
+        $messages = [
+            'photo.max' => 'Upload failed! image larger than 1MB',
+        ];
+        $request->validate($validationRules,$messages);
+
+
         $roomInfo = new RoomInfo();
         $roomInfo->room_name        = $request['room_name'];
         $roomInfo->guest_no         = $request['guest_no'];
@@ -58,7 +70,21 @@ class RoomInfoController extends Controller
         $roomInfo->longitude        = $request['longitude'];
 
         $roomInfo->save();
+
+        $roomImage = new room_image();
+        $upDir = public_path() . '/images/';
+        $imgName = date('YmdHis') . '_';
+          if ($request->hasFile('photo')) {
+              $image = $request->file('photo');
+              $roomImage->room_id = $roomInfo->id;
+              $roomImage->room_image = 'photo-'.$roomInfo->id.$imgName. '.' . $image->getClientOriginalExtension();
+              $image->move($upDir, $roomImage->room_image);
+          }
+          $roomImage->save();
+
         return redirect()->back();
+
+
     }
 
 
