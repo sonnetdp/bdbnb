@@ -38,23 +38,18 @@
 					<a href="{{url('/')}}" style="color:#FFFFFF;">Home</a>
 				</li>
 				<li class="dropdown dropdown-large">
-					<a href="{{url('/user/addFlat')}}" style="color:#FFFFFF;">Add Flat</a>
-				</li>
-				<li class="dropdown dropdown-large">
 					<a href="expriences.html" style="color: #FFFFFF;">Host and Exprience</a>
 				</li>
 				<li class="dropdown dropdown-large">
 					<a href="#" style="color:#FFFFFF;">Help</a>
 				</li>
-				<li class="dropdown"><a href="" class="dropdown-toggle" data-toggle="dropdown" style="color: #FFFFFF;">products &nbsp; <span class="caret"></span></a>
-
-					<ul class="dropdown-menu">
-						<li><a href="">Dates</a></li>
-						<li><a href="">Guests</a></li>
-						<li><a href="">Filters</a></li>
-						<li><a href="">Time of day</a></li>
-					</ul>
+				<li>
+					<a href="{{url('/showFlat')}}">All flat</a>
 				</li>
+				<li>
+					<a href="{{url('/user/addFlat')}}" >Add Flat</a>
+				</li>
+
 			</ul>
 		</div>
 	</div>

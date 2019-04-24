@@ -19,8 +19,12 @@ Route::post('query','ContactController@querySave');
 
 //Route group for registered user
 Route::prefix('user')->middleware(['auth'])->group(function () {
+    Route::get('/', function () {
+        return view('layouts.index');
+    });
     Route::get('/addFlat','RoomInfoController@showAddFlatForm');
     Route::post('/addFlat','RoomInfoController@queryInsert');
+    Route::get('/showFlat','RoomInfoController@showAllFlat');
 });
 
 //Route group for admin
@@ -51,6 +55,7 @@ Route::get('/', function () {
     return view('layouts.index');
 });
 
+Route::get('/showFlat','RoomInfoController@showAllFlat');
 
 //Route::get('/test', function () {
     //return view('layouts.index');

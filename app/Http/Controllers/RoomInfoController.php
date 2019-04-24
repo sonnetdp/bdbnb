@@ -87,6 +87,10 @@ class RoomInfoController extends Controller
 
     }
 
+        public function showAllFlat(){
+            $roominfo = RoomInfo::all();
+            return view('showAllFlat')->with('flat',$roominfo);
+        }
 
 
 
