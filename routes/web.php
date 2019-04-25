@@ -49,6 +49,7 @@ Route::group(['prefix'=>'manager','middleware'=>['auth','auth.manager']],functio
     Route::post('update/user/{user_id}','UserController@updateSaveUser');
     Route::get('list/user/{role}','UserController@showUserByRole');
     Route::get('test-route','UserController@test');
+    Route::get('test-route1','UserController@test');
 
 });
 
