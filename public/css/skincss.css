@@ -156,4 +156,11 @@ body{
     margin-right: 5px;
 }
 
-/*registration*/
+/*registration flat*/
+#reg_form{
+  padding: 40px;
+  margin: 0 auto;
+}
+.custom-file-label {
+    left:14px;
+}
