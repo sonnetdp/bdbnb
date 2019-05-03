@@ -90,7 +90,7 @@ body{
 }
 .marque
 {
-  
+
   font-size: 18px;
   color:#0FF777;
 }
@@ -117,37 +117,43 @@ body{
 }
 
 /*footer*/
-  
-ul.footer_box{
-  list-style:none;
-  padding:0;
-} 
-ul.footer_box h4{
-  color:#fff;
-  font-size:1.1em;
-  text-transform:uppercase;
-  font-weight:700;
-  margin-bottom: 8%;
-}
-ul.footer_box li a{
-  color: #B8B6B6;
-  font-size: 1em;
-  text-decoration:none;
-  line-height: 2em;
-}
+
 .module{
   position:relative;
-  top:10%;    
+  top:10%;
   height:65%;
   width:450px;
   margin-left:auto;
   margin-right:auto;
 }
-.footer
-{
-  min-height: 80px;
-  width: 100%;
-  background-color: #0F0101;
+.footer{
+    background: #42424F;
+    padding: 36px;
+    color: #F9BC08;
+}
+.footer ul{
+    list-style:none;
+    padding:0;
+}
+.footer ul a{
+    color: #F9BC08;
+}
+
+.footer ul a:hover {
+    color: #64DD18;
+    text-decoration: none;
+}
+.footer p{
+    margin: 0 auto;
+    padding-top: 30px;
+}
+.newsletter{
+    font-size: 14px;
+}
+
+.newsletter input.form-control{
+    font-size: 14px;
+    margin-right: 5px;
 }
 
 /*registration*/
