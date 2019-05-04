@@ -49,12 +49,28 @@
   		<a class="nav-link" href="{{url('/user/addFlat')}}">Add Flat</a>
   	  </li>
     </ul>
+	@guest
 
 	<ul class="navbar-nav ">
 		<li class="nav-item">
 			<a class="nav-link" href="{{ route('login') }}"><i class="far fa-user"></i> Login</a>
 		</li>
 	</ul>
+	@else
+	<ul class="navbar-nav ">
+		<li class="nav-item">
+			<a href="{{ route('logout') }}"
+				onclick="event.preventDefault();
+						 document.getElementById('logout-form').submit();">
+				{{Auth::user()->name}}Logout
+			</a>
+
+			<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+				{{ csrf_field() }}
+			</form>
+		</li>
+	</ul>
+	@endguest
   </div>
 </nav>
 
